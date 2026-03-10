@@ -1,0 +1,652 @@
+<div class="custom-table-watitoto">
+<p></p>
+<style>
+        .custom-table-watitoto body {
+            font-family: Arial, sans-serif;
+            background-color: #FF3300;
+            color: white;
+            padding: 20px;
+        }
+        .custom-table-watitoto h1 {
+            text-align: center; /* Center the heading text */
+        }
+        .custom-table-watitoto .button {
+            margin: 5px;
+            padding: 10px 20px;
+            background-color: #FF3300;
+            border: none;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 18px;
+        }
+        .custom-table-watitoto .info {
+    display: none;
+    margin-top: 20px;
+    padding: 15px;
+    background-color: transparent; /* Ganti dengan warna latar belakang yang diinginkan */
+    color: white; /* Ganti dengan warna teks yang diinginkan */
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Tambahkan bayangan jika perlu */
+}
+        .custom-table-watitoto h2 {
+            color: #FF3300;
+        }
+ .custom-table-component h1 {
+            color: white;
+        }
+        .custom-table-watitoto table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        .custom-table-watitoto th, .custom-table-watitoto td {
+            padding: 10px;
+            border: 1px solid #FF3300;
+            text-align: center;
+        }
+        .custom-table-watitoto th {
+            background-color: #FF3300;
+            color: black;
+        }
+	.custom-table-watitoto td {
+            background-color: #FF3300;
+            color: black;
+        }
+    </style>
+<div style="text-align: center;">
+<div id="buttonsContainer" style="display: inline-block;"><button class="button" onclick="showInfo('noKeluarInfo')">No. Keluar</button> <button class="button" onclick="showInfo('fourDInfo')">4D/3D/2D</button> <button class="button" onclick="showInfo('colokBebasInfo')">Colok Bebas</button> <button class="button" onclick="showInfo('colokBebas2DInfo')">Colok Bebas 2D</button> <button class="button" onclick="showInfo('colokNagaInfo')">Colok Naga</button> <button class="button" onclick="showInfo('colokJituInfo')">Colok Jitu</button> <button class="button" onclick="showInfo('tengahTepiInfo')">Tengah Tepi</button> <button class="button" onclick="showInfo('kombinasiInfo')">Kombinasi</button> <button class="button" onclick="showInfo('dasarInfo')">Dasar</button> <button class="button" onclick="showInfo('limaPuluhInfo')">50 - 50</button> <button class="button" onclick="showInfo('shioInfo')">Shio</button> <button class="button" onclick="showInfo('silangInfo')">Silang</button> <button class="button" onclick="showInfo('kembangKempisInfo')">Kembang Kempis</button> <button class="button" onclick="showInfo('mistikLamaInfo')">Mistik Lama</button> <button class="button" onclick="showInfo('indexInfo')">Index</button> <button class="button" onclick="showInfo('macauShioInfo')">Macau Shio</button> <button class="button" onclick="showInfo('taysenInfo')">Taysen</button></div>
+</div>
+<p><button id="otherButton" class="button" style="display: none;" onclick="showAllButtons()">Cek Cara Bermain Lainnya</button></p>
+<div id="noKeluarInfo" class="info">
+<h2>Nomor Keluar</h2>
+<p>Nomor pengeluaran adalah berdasarkan <strong>1st prize</strong> nomor yang dihasilkan oleh <strong>4D Singapore</strong>. Untuk melihat hasil nomor tersebut, Anda dapat mengunjungi <a href="https://www.singaporepools.com.sg" target="_blank" rel="noopener">Singapore Pools</a>.</p>
+<h3>Contoh Nomor Bola Angka:</h3>
+<ul>
+<li>Bola 1 = 7</li>
+<li>Bola 2 = 21</li>
+<li>Bola 3 = 29</li>
+<li>Bola 4 = 32</li>
+<li>Bola 5 = 36</li>
+<li>Bola 6 = 38</li>
+<li>Additional Number = 04</li>
+</ul>
+<p><strong>Nomor Buka:</strong> 0885</p>
+<h3>Cara Perhitungan:</h3>
+<ol>
+<li>Urutkan bola dari yang terkecil sampai yang terbesar.</li>
+<li>Jumlahkan bola ke 1 sampai bola ke 6: <strong>7 + 21 + 29 + 32 + 36 + 38 = 163</strong></li>
+<li>Kali dengan 2: <strong>163 &times; 2 = 326</strong></li>
+<li>Kurangkan dengan bola ke 1 (7) dan bola ke 6 (38): <strong>326 - 7 - 38 = 281</strong></li>
+<li>Tambahkan dengan additional number (04): <strong>281 + 04 = 285</strong></li>
+<li>Dari hasil 285, ambil angka puluhan 85.</li>
+</ol>
+<h3>Hasil Perhitungan:</h3>
+<ul>
+<li>Ribuan = 0</li>
+<li>Ratusan = 8</li>
+<li>Puluhan = 85</li>
+</ul>
+<p><strong>Hasilnya:</strong> Buka 0885</p>
+<h2>Jenis Permainan</h2>
+<p>Jenis permainan togel yang tersedia adalah:</p>
+<ul>
+<li>4D, 3D dan 2D</li>
+<li>Colok Bebas</li>
+<li>Colok Bebas 2D</li>
+<li>Colok Jitu</li>
+<li>Colok Naga</li>
+<li>50-50 (Besar-Kecil-Ganjil-Genap)</li>
+<li>Shio</li>
+<li>Kembang Kempis</li>
+<li>Silang Homo</li>
+<li>Tengah Tepi</li>
+<li>Dasar (Besar-Kecil-Ganjil-Genap)</li>
+<li>2 Kombinasi</li>
+</ul>
+<h3>Struktur Nomor Keluar:</h3>
+<p>Struktur nomor keluar dapat dinyatakan sebagai:</p>
+<ul>
+<li>A = AS</li>
+<li>B = KOP</li>
+<li>C = KEPALA</li>
+<li>D = EKOR</li>
+</ul>
+<br /><img class="tab logo" src="https://cdn.areabermain.club/assets/cdn/az2/2025/02/07/20250207/483fb3f77092c913cc8099bf1acffac0/watitoto.png" alt="logo" style="max-width: 100%; height: auto;" /></div>
+<div id="fourDInfo" class="info">
+<h2>4D/3D/2D</h2>
+<p>Menebak 4 angka, 3 angka dan 2 angka.</p>
+<h3>Struktur: ABCD</h3>
+<p>Misalnya keluar: <strong>4321</strong></p>
+<ul>
+<li>4D = 4321</li>
+<li>3D = 321</li>
+<li>2D = 21</li>
+</ul>
+<h3>Aturan Permainan:</h3>
+<ul>
+<li>Jika anda membeli diluar dari nomor yang dikeluarkan, berarti anda kalah dan uang tidak dikembalikan sama sekali.</li>
+<li>Jika anda membeli masing-masing 100rb untuk angka:
+<ul>
+<li>4D = 4321</li>
+<li>3D = 321</li>
+<li>2D = 21</li>
+</ul>
+(Khusus untuk 4D, 3D dan 2D diberikan diskon tambahan. Diskon akan makin besar jika nilai akumulasi betting dalam satu periode makin besar).</li>
+<li>Berarti kemenangan anda adalah:
+<ul>
+<li>4D = 100rb x [Indeks kemenangan untuk 4D]</li>
+<li>3D = 100rb x [Indeks kemenangan untuk 3D]</li>
+<li>2D = 100rb x [Indeks kemenangan untuk 2D]</li>
+</ul>
+(Catatan: nilai bet 100rb tidak dikembalikan ke member).</li>
+</ul>
+<h3>2D Posisi</h3>
+<p>Struktur: ABCD</p>
+<p>Misalnya keluar nomor: <strong>1234</strong></p>
+<ul>
+<li>2D Depan = 12</li>
+<li>2D Tengah = 23</li>
+<li>2D Belakang = 34</li>
+</ul>
+<br /><img class="tab logo" src="https://cdn.areabermain.club/assets/cdn/az2/2025/02/07/20250207/483fb3f77092c913cc8099bf1acffac0/watitoto.png" alt="logo" style="max-width: 100%; height: auto;" /></div>
+<div id="colokBebasInfo" class="info">
+<h2>Colok Bebas</h2>
+<p>Menebak satu angka dari 4D. Posisi angka bisa dimana saja.</p>
+<h3>Struktur: ABCD</h3>
+<h4>Analisis I:</h4>
+<p>Keluar: <strong>4321</strong></p>
+<p>Misalnya dibeli angka <strong>3</strong> dengan nilai <strong>100rb</strong>.</p>
+<p>Berarti menang: <strong>100rb + [Indeks kemenangan untuk colok bebas]</strong></p>
+<h4>Analisis II:</h4>
+<p>Keluar: <strong>4331</strong></p>
+<p>Misalnya dibeli angka <strong>3</strong> dengan nilai <strong>100rb</strong>.</p>
+<p>Berarti menang: <strong>100rb + ([Indeks kemenangan untuk colok bebas] x 2)</strong></p>
+<p>Dan seterusnya untuk setiap kembaran yang berhasil ditebak, otomatis mendapat kelipatan <strong>[Indeks kemenangan untuk colok bebas]</strong>.</p>
+</div>
+<div id="colokBebas2DInfo" class="info">
+<h2>Colok Bebas 2D</h2>
+<p>Cara kerja seperti colok bebas tapi mesti menebak 2 angka dari 4D.</p>
+<h3>Struktur: ABCD</h3>
+<h4>Analisis I:</h4>
+<p>Keluar: <strong>4321</strong></p>
+<p>Misalnya dibeli angka <strong>4</strong> dan <strong>2</strong> dengan nilai <strong>100rb</strong>.</p>
+<p>Berarti menang: <strong>100rb + [Indeks kemenangan untuk colok bebas 2D, kategori: 2 digit]</strong></p>
+<h4>Analisis II:</h4>
+<p>Keluar: <strong>4321</strong></p>
+<p>Misalnya dibeli angka <strong>4</strong> dan <strong>6</strong> dengan nilai <strong>100rb</strong>.</p>
+<p>Berarti KALAH dan nilai betting tidak dikembalikan.</p>
+<h4>Analisis III:</h4>
+<p>Keluar: <strong>4331</strong></p>
+<p>Misalnya dibeli angka <strong>4</strong> dan <strong>3</strong> dengan nilai <strong>100rb</strong>.</p>
+<p>Berarti menang: <strong>100rb + [Indeks kemenangan untuk colok bebas 2D, kategori: 3 digit]</strong></p>
+<h4>Analisis IV:</h4>
+<p>Keluar: <strong>4334</strong></p>
+<p>Misalnya dibeli angka <strong>4</strong> dan <strong>3</strong> dengan nilai <strong>100rb</strong>.</p>
+<p>Berarti menang: <strong>100rb + [Indeks kemenangan untuk colok bebas 2D, kategori: 4 digit]</strong></p>
+<br /><img class="tab logo" src="https://cdn.areabermain.club/assets/cdn/az2/2025/02/07/20250207/483fb3f77092c913cc8099bf1acffac0/watitoto.png" alt="logo" style="max-width: 100%; height: auto;" /></div>
+<div id="colokNagaInfo" class="info">
+<h2>Colok Naga</h2>
+<p>Cara kerja seperti colok bebas 2D tapi mesti menebak 3 angka dari 4D.</p>
+<h3>Struktur: ABCD</h3>
+<h4>Analisis I:</h4>
+<p>Keluar: <strong>4321</strong></p>
+<p>Misalnya dibeli angka <strong>4</strong>, <strong>2</strong>, dan <strong>3</strong> dengan nilai <strong>100rb</strong>.</p>
+<p>Berarti MENANG: <strong>100rb + [Indeks kemenangan untuk colok naga, kategori: 3 digit]</strong></p>
+<h4>Analisis II:</h4>
+<p>Keluar: <strong>4321</strong></p>
+<p>Misalnya dibeli angka <strong>4</strong>, <strong>2</strong>, dan <strong>6</strong> dengan nilai <strong>100rb</strong>.</p>
+<p>Berarti KALAH: <strong>Nilai betting tidak dikembalikan</strong>, karena keluar hanya 2 digit, angka 4 dan 2.</p>
+<h4>Analisis III:</h4>
+<p>Keluar: <strong>4321</strong></p>
+<p>Misalnya dibeli angka <strong>4</strong>, <strong>3</strong>, dan <strong>1</strong> dengan nilai <strong>100rb</strong>.</p>
+<p>Berarti MENANG: <strong>100rb + [Indeks kemenangan untuk colok naga, kategori: 3 digit]</strong></p>
+<h4>Analisis IV:</h4>
+<p>Keluar: <strong>4324</strong></p>
+<p>Misalnya dibeli angka <strong>4</strong>, <strong>3</strong>, dan <strong>2</strong> dengan nilai <strong>100rb</strong>.</p>
+<p>Berarti MENANG: <strong>100rb + [Indeks kemenangan untuk colok naga, kategori: 4 digit]</strong></p>
+<br /><img class="tab logo" src="https://cdn.areabermain.club/assets/cdn/az2/2025/02/07/20250207/483fb3f77092c913cc8099bf1acffac0/watitoto.png" alt="logo" style="max-width: 100%; height: auto;" /></div>
+<div id="colokJituInfo" class="info">
+<h2>Colok Jitu</h2>
+<p>Menebak satu angka pada posisi tertentu dari 4D.</p>
+<h3>Struktur: ABCD</h3>
+<h4>Analisis I:</h4>
+<p>Keluar: <strong>4321</strong></p>
+<p>Misalnya dibeli angka <strong>4</strong> pada posisi <strong>AS</strong> dengan nilai <strong>100rb</strong>.</p>
+<p>Berarti menang: <strong>100rb + [Indeks kemenangan untuk colok jitu]</strong></p>
+<h4>Analisis II:</h4>
+<p>Keluar: <strong>4331</strong></p>
+<p>Misalnya dibeli angka <strong>3</strong> pada posisi <strong>KOP</strong> dengan nilai <strong>100rb</strong>.</p>
+<p>Berarti menang: <strong>100rb + [Indeks kemenangan untuk colok jitu]</strong>. Hasilnya sama dengan analisis I karena hanya memperhatikan posisi yang dipasang.</p>
+<h4>Analisis III:</h4>
+<p>Keluar: <strong>4331</strong></p>
+<p>Misalnya dibeli angka <strong>4</strong> pada posisi <strong>EKOR</strong> dengan nilai <strong>100rb</strong>.</p>
+<p>Berarti KALAH: Meskipun nilai <strong>4</strong> keluar pada posisi <strong>AS</strong>, ini tidak akan mempengaruhi pemilihan di posisi <strong>EKOR</strong>.</p>
+<br /><img class="tab logo" src="https://cdn.areabermain.club/assets/cdn/az2/2025/02/07/20250207/483fb3f77092c913cc8099bf1acffac0/watitoto.png" alt="logo" style="max-width: 100%; height: auto;" /></div>
+<div id="tengahTepiInfo" class="info">
+<h2>Tengah Tepi</h2>
+<p>Menebak tengah/tepi dari posisi 2D.</p>
+<p><strong>Tengah</strong> = Di antara 25 sampai 74</p>
+<p><strong>Tepi</strong> = Di antara 00 sampai 24 dan 75 sampai 99</p>
+<h3>Struktur: ABCD</h3>
+<h4>Analisis I:</h4>
+<p>Keluar: <strong>4321</strong></p>
+<p>Permainan ini hanya memperhatikan posisi 2D, berarti yang dipedomani = <strong>21</strong></p>
+<p><strong>21</strong> = TEPI</p>
+<p>Misalnya dibeli posisi <strong>TEPI</strong> dengan nilai <strong>100rb</strong>.</p>
+<p>Berarti menang: <strong>100rb + [Indeks kemenangan untuk tepi-tengah] + Kei</strong></p>
+<h4>Analisis II:</h4>
+<p>Keluar: <strong>4356</strong></p>
+<p>Permainan ini hanya memperhatikan posisi 2D, berarti yang dipedomani = <strong>56</strong></p>
+<p><strong>56</strong> = TENGAH</p>
+<p>Misalnya dibeli posisi <strong>TENGAH</strong> dengan nilai <strong>100rb</strong>.</p>
+<p>Berarti menang: <strong>100rb + [Indeks kemenangan untuk tepi-tengah] + Kei</strong></p>
+<br /><img class="tab logo" src="https://cdn.areabermain.club/assets/cdn/az2/2025/02/07/20250207/483fb3f77092c913cc8099bf1acffac0/watitoto.png" alt="logo" style="max-width: 100%; height: auto;" /></div>
+<div id="kombinasiInfo" class="info">
+<h2>KOMBINASI</h2>
+<p>Struktur: ABCD</p>
+<ul>
+<li>A = AS</li>
+<li>B = KOP</li>
+<li>C = KEPALA</li>
+<li>D = EKOR</li>
+</ul>
+<p><strong>Besar/Kecil:</strong> 0-4 = Kecil, 5-9 = Besar</p>
+<p><strong>Ganjil/Genap:</strong> 1 = Ganjil, 2 = Genap, dan seterusnya</p>
+<p>Anda dapat menebak Genap/Ganjil, Besar/Kecil dari 2 kombinasi antara AS, KOP, KEPALA, EKOR.</p>
+<h3>Analisis:</h3>
+<p>Keluar: <strong>1845</strong></p>
+<p>Berarti pemenang untuk:</p>
+<ul>
+<li>AS Kecil/Ganjil dan KOP Besar/Genap</li>
+<li>KEPALA Kecil/Genap dan EKOR Besar/Ganjil</li>
+<li>AS Kecil/Ganjil dan KEPALA Kecil/Genap</li>
+<li>AS Kecil/Ganjil dan EKOR Besar/Ganjil</li>
+<li>KOP Besar/Genap dan KEPALA Kecil/Genap</li>
+<li>KOP Besar/Genap dan EKOR Besar/Ganjil</li>
+</ul>
+<p>Misalnya anda membeli:</p>
+<p>- AS Kecil dan KOP Genap seharga <strong>100rb</strong>, maka menang = <strong>100rb + [indeks kemenangan untuk kombinasi 2]</strong></p>
+<p>- KOP Genap dan KEPALA Genap seharga <strong>100rb</strong>, maka menang = <strong>100rb + [indeks kemenangan untuk kombinasi 2]</strong></p>
+<p>- KEPALA Kecil dan EKOR Genap seharga <strong>100rb</strong>, berarti KALAH (Anda harus menebak keduanya dengan benar agar menang).</p>
+<br /><img class="tab logo" src="https://cdn.areabermain.club/assets/cdn/az2/2025/02/07/20250207/483fb3f77092c913cc8099bf1acffac0/watitoto.png" alt="logo" style="max-width: 100%; height: auto;" /></div>
+<div id="dasarInfo" class="info">
+<h2>DASAR</h2>
+<p>Menebak ganjil/genap dan besar/kecil dari penjumlahan angka-angka 2D.</p>
+<p><strong>Struktur:</strong> CD (2 angka terakhir)</p>
+<p><strong>Kecil:</strong> angka 0-4</p>
+<p><strong>Besar:</strong> angka 5-9</p>
+<p><strong>Ganjil:</strong> 1, 3, 5, 7, 9</p>
+<p><strong>Genap:</strong> 0, 2, 4, 6, 8</p>
+<h3>Analisis:</h3>
+<h4>Analisis I:</h4>
+<p>Keluar: <strong>1234</strong>,</p>
+<p>3 + 4 = <strong>7</strong></p>
+<p>Berarti keluar: <strong>Ganjil dan Besar</strong></p>
+<h4>Analisis II:</h4>
+<p>Keluar: <strong>5678</strong>,</p>
+<p>7 + 8 = <strong>15</strong></p>
+<p>Karena angka 15 lebih besar dari 9, kembali dihitung 1 + 5 = <strong>6</strong></p>
+<p>Berarti keluar: <strong>Genap dan Besar</strong></p>
+<h4>Analisis III:</h4>
+<p>Keluar: <strong>1204</strong>,</p>
+<p>0 + 4 = <strong>4</strong></p>
+<p>Berarti keluar: <strong>Genap dan Kecil</strong></p>
+<p>Misal anda membeli dengan Rp.100rb untuk Genap, menang = <strong>100rb + [indeks menang untuk Dasar]</strong></p>
+<br /><img class="tab logo" src="https://cdn.areabermain.club/assets/cdn/az2/2025/02/07/20250207/483fb3f77092c913cc8099bf1acffac0/watitoto.png" alt="logo" style="max-width: 100%; height: auto;" /></div>
+<div id="limaPuluhInfo" class="info">
+<h2>50 - 50</h2>
+<p>Menebak ganjil/genap, besar/kecil. Permainan ini sangat menarik karena pasarannya naik turun sesuai keinginan market pada waktu tersebut. Dengan demikian, nilai pembelian dipengaruhi kei (pasaran).</p>
+<h3>Struktur: ABCD</h3>
+<ul>
+<li>A = AS</li>
+<li>B = KOP</li>
+<li>C = KEPALA</li>
+<li>D = EKOR</li>
+</ul>
+<p><strong>Besar/Kecil:</strong> 0-4 = Kecil, 5-9 = Besar</p>
+<p><strong>Ganjil/Genap:</strong> 1 = Ganjil, 2 = Genap, dan seterusnya</p>
+<h3>Analisis:</h3>
+<h4>Analisis I:</h4>
+<p>Keluar: <strong>4327</strong></p>
+<p>Berarti pemenang adalah yang memilih:</p>
+<ul>
+<li>AS Genap/Kecil</li>
+<li>KOP Ganjil/Kecil</li>
+<li>KEPALA Genap/Kecil</li>
+<li>EKOR Ganjil/Besar</li>
+</ul>
+<p>Misal anda membeli dengan dana Rp.<strong>100rb</strong> untuk AS Genap, maka menang = <strong>100rb + [indeks pasaran AS Genap 50-50]</strong></p>
+<p>Atau:</p>
+<p>Jika membeli dengan dana Rp.<strong>100rb</strong> untuk EKOR Ganjil, maka menang = <strong>100rb + [indeks pasaran EKOR Ganjil 50-50]</strong></p>
+<p>Atau:</p>
+<p>Jika membeli dengan dana Rp.<strong>100rb</strong> untuk AS Ganjil, maka kalah = <strong>100rb + [indeks pasaran AS Ganjil 50-50]</strong></p>
+<br /><img class="tab logo" src="https://cdn.areabermain.club/assets/cdn/az2/2025/02/07/20250207/483fb3f77092c913cc8099bf1acffac0/watitoto.png" alt="logo" style="max-width: 100%; height: auto;" /></div>
+<div id="shioInfo" class="info">
+<h2>SHIO</h2>
+<p>Menebak SHIO dari posisi 2D. SHIO merupakan 12 lambang kelahiran dalam penanggalan China. Dalam permainan ini, setiap lambang diwakili dengan satu nomor.</p>
+<h3>Daftar Shio:</h3>
+<table>
+<tbody>
+<tr>
+<th>Nama Shio</th>
+<th>Nomor Terkait</th>
+</tr>
+<tr>
+<td>Kuda</td>
+<td>01, 13, 25, 37, 49, 61, 73, 85, 97</td>
+</tr>
+<tr>
+<td>Ular</td>
+<td>02, 14, 26, 38, 50, 62, 74, 86, 98</td>
+</tr>
+<tr>
+<td>Naga</td>
+<td>03, 15, 27, 39, 51, 63, 75, 87, 99</td>
+</tr>
+<tr>
+<td>Kelinci</td>
+<td>04, 16, 28, 40, 52, 64, 76, 88, 00</td>
+</tr>
+<tr>
+<td>Harimau</td>
+<td>05, 17, 29, 41, 53, 65, 77, 89</td>
+</tr>
+<tr>
+<td>Kerbau</td>
+<td>06, 18, 30, 42, 54, 66, 78, 90</td>
+</tr>
+<tr>
+<td>Tikus</td>
+<td>07, 19, 31, 43, 55, 67, 79, 91</td>
+</tr>
+<tr>
+<td>Babi</td>
+<td>08, 20, 32, 44, 56, 68, 80, 92</td>
+</tr>
+<tr>
+<td>Anjing</td>
+<td>09, 21, 33, 45, 57, 69, 81, 93</td>
+</tr>
+<tr>
+<td>Ayam</td>
+<td>10, 22, 34, 46, 58, 70, 82, 94</td>
+</tr>
+<tr>
+<td>Monyet</td>
+<td>11, 23, 35, 47, 59, 71, 83, 95</td>
+</tr>
+<tr>
+<td>Kambing</td>
+<td>12, 24, 36, 48, 60, 72, 84, 96</td>
+</tr>
+</tbody>
+</table>
+<h3>Analisis:</h3>
+<h4>Analisis I:</h4>
+<p>Keluar: <strong>4321</strong></p>
+<p>Permainan ini hanya memperhatikan posisi 2D, berarti yang dipedomani = <strong>21</strong></p>
+<p>Hasil = <strong>21 - 12 = 9</strong> (shio disesuaikan dengan tabel di atas)</p>
+<h4>Analisis II:</h4>
+<p>Keluar: <strong>6543</strong></p>
+<p>Permainan ini hanya memperhatikan posisi 2D, berarti yang dipedomani = <strong>43</strong></p>
+<p>Hasil = <strong>43 - 36 = 7</strong> (shio disesuaikan dengan tabel di atas)</p>
+<h4>Analisis III:</h4>
+<p>Keluar: <strong>1389</strong></p>
+<p>Permainan ini hanya memperhatikan posisi 2D, berarti yang dipedomani = <strong>89</strong></p>
+<p>Hasil = <strong>89 - 84 = 5</strong> (shio disesuaikan dengan tabel di atas)</p>
+<p><strong>Catatan:</strong> Nilai yang dikurangi merupakan kelipatan 12.</p>
+<p>Jika dilakukan pembelian dengan Rp.<strong>100rb</strong> dan menang maka:</p>
+<p>Menang = <strong>100rb + [Indeks kemenangan untuk SHIO]</strong></p>
+<br /><img class="tab logo" src="https://cdn.areabermain.club/assets/cdn/az2/2025/02/07/20250207/483fb3f77092c913cc8099bf1acffac0/watitoto.png" alt="logo" style="max-width: 100%; height: auto;" /></div>
+<div id="silangInfo" class="info">
+<h2>SILANG</h2>
+<p>Permainan ini kadang disebut suami istri. Menebak dari posisi Depan, Tengah, Belakang.</p>
+<h3>Contoh:</h3>
+<p>No: <strong>1234</strong></p>
+<ul>
+<li><strong>Posisi Depan:</strong> 2 no terdepan yaitu <strong>12</strong></li>
+<li><strong>Posisi Tengah:</strong> 2 no di tengah yaitu <strong>23</strong></li>
+<li><strong>Posisi Belakang:</strong> 2 no terbelakang yaitu <strong>34</strong></li>
+</ul>
+<h3>Kategori:</h3>
+<p><strong>SILANG:</strong> Terdapat Ganjil dan Genap.</p>
+<p><strong>HOMO:</strong> Terdapat 1 pasang Ganjil atau 1 pasang Genap.</p>
+<h3>Analisis:</h3>
+<h4>Analisis I:</h4>
+<p>Beli Posisi Depan.</p>
+<p>Keluar: <strong>1234</strong></p>
+<p>Yang menjadi pedoman adalah posisi Depan, berarti <strong>12</strong></p>
+<p><strong>12</strong> =&gt; 1 (ganjil) dan 2 (genap), berarti hasil = <strong>SILANG</strong></p>
+<h4>Analisis II:</h4>
+<p>Beli Posisi Tengah.</p>
+<p>Keluar: <strong>4326</strong></p>
+<p>Yang menjadi pedoman adalah posisi Tengah, berarti <strong>32</strong></p>
+<p><strong>32</strong> =&gt; 3 (ganjil) dan 2 (genap), berarti hasil = <strong>SILANG</strong></p>
+<h4>Analisis III:</h4>
+<p>Beli Posisi Belakang.</p>
+<p>Keluar: <strong>4533</strong></p>
+<p>Yang menjadi pedoman adalah posisi Belakang, berarti <strong>33</strong></p>
+<p><strong>33</strong> =&gt; 3 (ganjil) dan 3 (ganjil), berarti hasil = <strong>HOMO</strong></p>
+<p>Jika dilakukan pembelian dengan Rp.<strong>100rb</strong> dan menang maka:</p>
+<p>Menang = <strong>100rb + [Indeks kemenangan untuk Silang-Homo]</strong></p>
+<br /><img class="tab logo" src="https://cdn.areabermain.club/assets/cdn/az2/2025/02/07/20250207/483fb3f77092c913cc8099bf1acffac0/watitoto.png" alt="logo" style="max-width: 100%; height: auto;" /></div>
+<div id="kembangKempisInfo" class="info">
+<h2>KEMBANG KEMPIS</h2>
+<p>Struktur: ABCD</p>
+<p>Jika Menebak posisi:</p>
+<ul>
+<li><strong>Depan:</strong> Fokus pada <strong>AB</strong></li>
+<li><strong>Tengah:</strong> Fokus pada <strong>BC</strong></li>
+<li><strong>Belakang:</strong> Fokus pada <strong>CD</strong></li>
+</ul>
+<h3>Kategori:</h3>
+<p><strong>KEMBANG:</strong> Jika A &lt; B atau B &lt; C atau C &lt; D</p>
+<p><strong>KEMPIS:</strong> Jika A &gt; B atau B &gt; C atau C &gt; D</p>
+<p><strong>KEMBAR:</strong> Jika A = B atau B = C atau C = D</p>
+<h3>Analisis:</h3>
+<h4>Analisis I:</h4>
+<p>Beli Posisi Depan.</p>
+<p>Keluar: <strong>4321</strong></p>
+<p>Yang menjadi pedoman adalah posisi Depan, berarti <strong>43</strong></p>
+<p><strong>43</strong> =&gt; 4 &gt; 3, hasil = <strong>KEMPIS</strong></p>
+<h4>Analisis II:</h4>
+<p>Beli Posisi Tengah.</p>
+<p>Keluar: <strong>4236</strong></p>
+<p>Yang menjadi pedoman adalah posisi Tengah, berarti <strong>23</strong></p>
+<p><strong>23</strong> =&gt; 2 &lt; 3, hasil = <strong>KEMBANG</strong></p>
+<h4>Analisis III:</h4>
+<p>Beli Posisi Belakang.</p>
+<p>Keluar: <strong>4099</strong></p>
+<p>Yang menjadi pedoman adalah posisi Belakang, berarti <strong>99</strong></p>
+<p><strong>99</strong> =&gt; Hasil = <strong>KEMBAR</strong></p>
+<p>Jika dilakukan pembelian dengan Rp.<strong>100rb</strong> dan menang maka:</p>
+<p>Menang = <strong>100rb + [Indeks kemenangan untuk KEMBANG-KEMPIS]</strong></p>
+<br /><img class="tab logo" src="https://cdn.areabermain.club/assets/cdn/az2/2025/02/07/20250207/483fb3f77092c913cc8099bf1acffac0/watitoto.png" alt="logo" style="max-width: 100%; height: auto;" /></div>
+<div id="mistikLamaInfo" class="info">
+<h2>MISTIK LAMA</h2>
+<p>Mistik Lama adalah generator untuk membantu pemain dalam melakukan bettingan, sehingga nomor yang dibeli sudah termasuk perubahan nomor mistik di dalamnya.</p>
+<h3>Perubahan Nomor dalam Mistik Lama:</h3>
+<ul>
+<li>0 = 1</li>
+<li>2 = 5</li>
+<li>3 = 8</li>
+<li>4 = 7</li>
+<li>6 = 9</li>
+</ul>
+<h3>Jenis Mistik:</h3>
+<h4>Mistik 1:</h4>
+<p>Terdapat 1 nomor dalam setiap posisi mengalami perubahan.</p>
+<p><strong>Contoh:</strong> Jika Anda membeli angka <strong>1234</strong>, nomor yang muncul:</p>
+<ul>
+<li>0234 (Digit I)</li>
+<li>1 534 (Digit II)</li>
+<li>12 84 (Digit III)</li>
+<li>123 7 (Digit IV)</li>
+</ul>
+<h4>Mistik 2:</h4>
+<p>Terdapat 2 nomor dalam setiap posisi mengalami perubahan.</p>
+<p><strong>Contoh:</strong> Jika Anda membeli angka <strong>1234</strong>, nomor yang muncul:</p>
+<ul>
+<li>0534</li>
+<li>1 584</li>
+<li>12 87</li>
+<li>02 84</li>
+<li>1 53 7</li>
+<li>023 7</li>
+</ul>
+<h4>Mistik 3:</h4>
+<p>Terdapat 3 nomor dalam setiap posisi mengalami perubahan.</p>
+<p><strong>Contoh:</strong> Jika Anda membeli angka <strong>1234</strong>, nomor yang muncul:</p>
+<ul>
+<li>0584</li>
+<li>1 587</li>
+<li>02 87</li>
+<li>053 7</li>
+</ul>
+<h4>Mistik 4:</h4>
+<p>Terdapat 4 nomor dalam setiap posisi mengalami perubahan.</p>
+<p><strong>Contoh:</strong> Jika Anda membeli angka <strong>1234</strong>, nomor yang muncul:</p>
+<ul>
+<li>0587</li>
+</ul>
+<h3>Informasi Tambahan:</h3>
+<ul>
+<li>Nomor origin tetap akan terbeli dalam panel bettingan mistik lama.</li>
+<li>Anda dapat memilih 3D atau 2D. Jika membeli 3D, mistik 1, 2, dan 3 dapat dipilih; jika 2D, hanya mistik 1 dan 2.</li>
+<li>Pilihan pembelian tersedia untuk nomor 4D, 3D, dan 2D sesuai nominal yang diinginkan.</li>
+<li>Pada pilihan "Nomor Duplicate / Angka yang sama", jika memilih "YA", semua nomor akan ditampilkan; jika "TIDAK", semua nomor duplicate akan dihilangkan.</li>
+</ul>
+<br /><img class="tab logo" src="https://cdn.areabermain.club/assets/cdn/az2/2025/02/07/20250207/483fb3f77092c913cc8099bf1acffac0/watitoto.png" alt="logo" style="max-width: 100%; height: auto;" /></div>
+<div id="indexInfo" class="info">
+<h2>INDEX</h2>
+<p>INDEX adalah generator untuk memudahkan pemain dalam melakukan bettingan, sehingga nomor yang dibeli sudah termasuk perubahan nomor index kecil dan besar di dalamnya.</p>
+<h3>Perubahan Nomor dalam INDEX:</h3>
+<ul>
+<li>0 = 5</li>
+<li>1 = 6</li>
+<li>2 = 7</li>
+<li>3 = 8</li>
+<li>4 = 9</li>
+</ul>
+<h3>Jenis INDEX:</h3>
+<h4>INDEX 1:</h4>
+<p>Terdapat 1 nomor dalam setiap posisi mengalami perubahan.</p>
+<p><strong>Contoh:</strong> Jika Anda membeli angka <strong>1239</strong>, nomor yang muncul:</p>
+<ul>
+<li>6239 = Digit I (1--&gt;6)</li>
+<li>1 739 = Digit II (2--&gt;7)</li>
+<li>12 89 = Digit III (3--&gt;8)</li>
+<li>123 4 = Digit IV (9--&gt;4)</li>
+</ul>
+<h4>INDEX 2:</h4>
+<p>Terdapat 2 nomor dalam setiap posisi mengalami perubahan.</p>
+<p><strong>Contoh:</strong> Jika Anda membeli angka <strong>1239</strong>, nomor yang muncul:</p>
+<ul>
+<li>6739 = Digit I (1--&gt;6), Digit II (2--&gt;7)</li>
+<li>1 789 = Digit II (2--&gt;7), Digit III (3--&gt;8)</li>
+<li>12 84 = Digit III (3--&gt;8), Digit IV (9--&gt;4)</li>
+<li>62 89 = Digit I (1--&gt;6), Digit III (3--&gt;8)</li>
+<li>1 73 4 = Digit II (2--&gt;7), Digit IV (9--&gt;4)</li>
+<li>623 4 = Digit I (1--&gt;6), Digit IV (9--&gt;4)</li>
+</ul>
+<h4>INDEX 3:</h4>
+<p>Terdapat 3 nomor dalam setiap posisi mengalami perubahan.</p>
+<p><strong>Contoh:</strong> Jika Anda membeli angka <strong>1239</strong>, nomor yang muncul:</p>
+<ul>
+<li>6789 = Digit I (1--&gt;6), Digit II (2--&gt;7), Digit III (3--&gt;8)</li>
+<li>1 784 = Digit II (2--&gt;7), Digit III (3--&gt;8), Digit IV (9--&gt;4)</li>
+<li>62 84 = Digit I (1--&gt;6), Digit III (3--&gt;8), Digit IV (9--&gt;4)</li>
+<li>673 4 = Digit I (1--&gt;6), Digit II (2--&gt;7), Digit IV (9--&gt;4)</li>
+</ul>
+<h4>INDEX 4:</h4>
+<p>Terdapat 4 nomor dalam setiap posisi mengalami perubahan.</p>
+<p><strong>Contoh:</strong> Jika Anda membeli angka <strong>1239</strong>, nomor yang muncul:</p>
+<ul>
+<li>6784 = Digit I (1--&gt;6), Digit II (2--&gt;7), Digit III (3--&gt;8), Digit IV (9--&gt;4)</li>
+</ul>
+<h3>Informasi Tambahan:</h3>
+<ul>
+<li>Nomor origin tetap akan terbeli dalam panel bettingan INDEX.</li>
+<li>Anda dapat memilih 3D atau 2D. Jika membeli 3D, INDEX 1, 2, dan 3 dapat dipilih; jika 2D, hanya INDEX 1 dan 2.</li>
+<li>Pilihan pembelian tersedia untuk nomor 4D, 3D, dan 2D sesuai nominal yang diinginkan.</li>
+<li>Pada pilihan "Nomor Duplicate / Angka yang sama", jika memilih "YA", semua nomor akan ditampilkan; jika "TIDAK", semua nomor duplicate akan dihilangkan.</li>
+</ul>
+<br /><img class="tab logo" src="https://cdn.areabermain.club/assets/cdn/az2/2025/02/07/20250207/483fb3f77092c913cc8099bf1acffac0/watitoto.png" alt="logo" style="max-width: 100%; height: auto;" /></div>
+<div id="macauShioInfo" class="info">
+<h2>MACAU SHIO</h2>
+<p>Macau Shio adalah bettingan di mana Anda membeli kombinasi 2 shio dalam sekali betting. Anda dapat membeli shio yang sama untuk shio pertama dan shio kedua.</p>
+<h3>Aturan Permainan:</h3>
+<ol>
+<li>Hasil dari shio pertama berdasarkan hasil dari As (angka pertama) + Kop (angka kedua).</li>
+<li>Hasil dari shio kedua berdasarkan hasil dari Kepala (angka ketiga) + Ekor (angka keempat).</li>
+<li>Hasil keluaran harus tepat berurutan seperti yang dibeli. Jika Anda membeli "HARIMAU &amp; KUDA" dan hasil keluaran adalah "KUDA - HARIMAU", maka Anda dinyatakan kalah.</li>
+<li>Hasil keluaran Macau Shio dapat dilihat di menu history nomor dan klik nomor keluaran di periode yang ingin Anda lihat.</li>
+<li>Perkalian pembayaran adalah 110x dari nilai bettingan Anda, dengan diskon pembelian 10% dan referral untuk atasan adalah 1% dari bettingan.</li>
+</ol>
+<h3>Contoh Hasil:</h3>
+<p><strong>Contoh Keluaran:</strong> 4321</p>
+<p>Permainan ini membeli 2 Kombinasi Shio yang tepat: AS, KOP &amp; KEPALA, EKOR</p>
+<ul>
+<li><strong>Shio Pertama:</strong><br />As = 4<br />Kop = 3</li>
+<li><strong>Shio Kedua:</strong><br />Kepala = 2<br />Ekor = 1</li>
+</ul>
+<p>Hasil shio Pertama = 43 - 36 = 7 (shio disesuaikan dengan tabel shio)<br />Hasil shio Kedua = 21 - 12 = 9 (shio disesuaikan dengan tabel shio)</p>
+<p><em>*Catatan: nilai yang dikurangi merupakan kelipatan 12.</em></p>
+<br /><img class="tab logo" src="https://cdn.areabermain.club/assets/cdn/az2/2025/02/07/20250207/483fb3f77092c913cc8099bf1acffac0/watitoto.png" alt="logo" style="max-width: 100%; height: auto;" /></div>
+<div id="taysenInfo" class="info">
+<h2>TAYSEN</h2>
+<p>Taysen merupakan generator nomor yang berfungsi untuk menampilkan nomor taysen dari nomor-nomor yang kita beli. Setiap nomor memiliki angka taysenya masing-masing sesuai dengan jenis bettingnya: 4D, 3D, ataupun 2D.</p>
+<p>Angka Taysenan per masing-masing nomor bisa dilihat di buku mimpi sebagai referensi.</p>
+<h3>Jenis Bettingan:</h3>
+<ul>
+<li><strong>4D:</strong> Terdapat 1 nomor Taysenanya.</li>
+<li><strong>3D:</strong> Terdapat 1 nomor Taysenanya.</li>
+<li><strong>2D:</strong> Terdapat 4 nomor Taysenanya.</li>
+</ul>
+<h3>Panduan Betting:</h3>
+<ol>
+<li>Dalam generator Taysen, terdapat 3 pilihan yang dapat dicentang untuk betting, yaitu Taysen 4D, Taysen 3D, atau Taysen 2D.</li>
+<li>Jika Anda mengisi 2 angka di kolom nomor, hanya Taysen 2D yang dapat dicentang.</li>
+<li>Jika Anda mengisi 3 angka, maka Taysen 3D dan 2D dapat dicentang.</li>
+<li>Jika Anda mengisi 4 angka, maka Taysen 2D, 3D, dan 4D dapat dicentang.</li>
+<li>Anda dapat memilih jenis bettingan apa saja yang ingin ditaysen dengan mencentang kolom checkbox untuk menampilkan taysenanya di hasil generate bettingan.</li>
+</ol>
+<h3>Fitur Tambahan:</h3>
+<ul>
+<li>Di kolom bettingan terdapat opsi BB. Jika Anda mencentang kolom BB, nomor-nomor yang sudah di-generate (nomor utama dan nomor taysenanya) akan di BB-in.</li>
+<li>Di panel bet juga terdapat kolom untuk mengisi nominal, yang dapat diisi dengan nominal berbeda untuk jenis bettingan 4D, 3D, dan 2D. Jika tidak diisi, jenis bettingan tersebut tidak akan tergenerate.</li>
+<li>Nomor utama juga akan ikut terbeli di dalam menu taysen.</li>
+<li>Dalam menu taysen, Anda tidak memiliki pilihan untuk membuang bettingan; artinya, Anda tidak dapat menghilangkan bettingan yang sama atau duplicate jika terdapat angka yang sama.</li>
+</ul>
+<br /><img class="tab logo" src="https://cdn.areabermain.club/assets/cdn/az2/2025/02/07/20250207/483fb3f77092c913cc8099bf1acffac0/watitoto.png" alt="logo" style="max-width: 100%; height: auto; display: block; margin-left: auto; margin-right: auto;" /></div>
+<script>
+    function showInfo(infoId) {
+        // Menyembunyikan semua tombol
+        document.getElementById('buttonsContainer').style.display = 'none';
+        // Menampilkan tombol cek cara bermain lainnya
+        document.getElementById('otherButton').style.display = 'block';
+        
+        // Menyembunyikan semua informasi
+        var infos = document.getElementsByClassName('info');
+        for (var i = 0; i < infos.length; i++) {
+            infos[i].style.display = 'none';
+        }
+        // Menampilkan informasi yang dipilih
+        document.getElementById(infoId).style.display = 'block';
+    }
+
+    function showAllButtons() {
+        // Menampilkan semua tombol
+        document.getElementById('buttonsContainer').style.display = 'block';
+        // Menyembunyikan tombol cek cara bermain lainnya
+        document.getElementById('otherButton').style.display = 'none';
+        
+        // Menyembunyikan semua informasi
+        var infos = document.getElementsByClassName('info');
+        for (var i = 0; i < infos.length; i++) {
+            infos[i].style.display = 'none';
+        }
+    }
+</script>
+</div>
